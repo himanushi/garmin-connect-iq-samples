@@ -1,0 +1,130 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "./AccelMag"
+    },
+    {
+      "path": "./ActivityTracking"
+    },
+    {
+      "path": "./Analog"
+    },
+    {
+      "path": "./AnimationWatchFace"
+    },
+    {
+      "path": "./ApplicationStorage"
+    },
+    {
+      "path": "./Attention"
+    },
+    {
+      "path": "./BackgroundTimer"
+    },
+    {
+      "path": "./BulkDownload"
+    },
+    {
+      "path": "./Comm"
+    },
+    {
+      "path": "./ConfirmationDialog"
+    },
+    {
+      "path": "./Drawable"
+    },
+    {
+      "path": "./Encryption"
+    },
+    {
+      "path": "./FieldTimerEvents"
+    },
+    {
+      "path": "./GenericChannelBurst"
+    },
+    {
+      "path": "./Input"
+    },
+    {
+      "path": "./JsonDataResources"
+    },
+    {
+      "path": "./Keyboard"
+    },
+    {
+      "path": "./MapSample"
+    },
+    {
+      "path": "./Menu2Sample"
+    },
+    {
+      "path": "./MenuTest"
+    },
+    {
+      "path": "./MO2Display"
+    },
+    {
+      "path": "./MoxyField"
+    },
+    {
+      "path": "./NordicThingy52"
+    },
+    {
+      "path": "./NordicThingy52CoinCollector"
+    },
+    {
+      "path": "./Picker"
+    },
+    {
+      "path": "./PitchCounter"
+    },
+    {
+      "path": "./PositionSample"
+    },
+    {
+      "path": "./Primates"
+    },
+    {
+      "path": "./ProgressBar"
+    },
+    {
+      "path": "./RecordSample"
+    },
+    {
+      "path": "./Selectable"
+    },
+    {
+      "path": "./Sensor"
+    },
+    {
+      "path": "./SensorHistory"
+    },
+    {
+      "path": "./SimpleDataField"
+    },
+    {
+      "path": "./Strings"
+    },
+    {
+      "path": "./Timer"
+    },
+    {
+      "path": "./Toasts"
+    },
+    {
+      "path": "./TrueTypeFonts"
+    },
+    {
+      "path": "./UserProfile"
+    },
+    {
+      "path": "./WebRequest"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "AccelMag"
+  }
+}
