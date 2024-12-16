@@ -11,11 +11,11 @@ import Toybox.WatchUi;
 
 //! Helper class makes a web or image request with context data.
 class BulkDownloadRequestDelegate {
-    private var _callback as Method(code as Number) as Void;
+    private var _callback as Method(code as Lang.Number, data as Object) as Void;
 
     //! Constructor
     //! @param callback The method to invoke when the request completes.
-    public function initialize(callback as Method(code as Number) as Void) {
+    public function initialize(callback as Method(code as Lang.Number, data as Object) as Void) {
         _callback = callback;
     }
 
@@ -62,13 +62,13 @@ class BulkDownloadRequestDelegate {
     //! @param code The server response code or BLE error
     //! @param data Content from a successful request
     public function onWebResponse(code as Number, data as Dictionary or String or Null) as Void {
-        _callback.invoke(code);
+        _callback.invoke(code, data);
     }
 
     //! Handle completed image request
     //! @param code The server response code or BLE error
     //! @param data A bitmap from a successful request
     public function onImageResponse(code as Number, data as BitmapResource or BitmapReference or Null) as Void {
-        _callback.invoke(code);
+        _callback.invoke(code, data);
     }
 }

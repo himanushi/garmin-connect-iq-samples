@@ -20,6 +20,10 @@ class BulkDownloadView extends WatchUi.View {
         _lines = ["Start/Stop to Sync", "Menu to Reset"];
     }
 
+    function onLayout(dc as Dc) as Void {
+        setLayout(Rez.Layouts.Layout(dc));
+    }
+
     //! Display text and successful download count
     //! @param dc Device context
     public function onUpdate(dc as Dc) as Void {
@@ -45,6 +49,11 @@ class BulkDownloadView extends WatchUi.View {
                 var downloadStatus = Lang.format("$1$ downloaded", [successfulDownloads]);
                 dc.drawText(cx, cy, font, downloadStatus, Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
             }
+        }
+
+        if(Storage.getValue("bitmap") != null) {
+            var bitmap = Storage.getValue("bitmap") as Graphics.BitmapReference;
+            dc.drawBitmap(0, 0, bitmap);
         }
     }
 

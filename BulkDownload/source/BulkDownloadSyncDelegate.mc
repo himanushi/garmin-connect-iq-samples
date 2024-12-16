@@ -8,6 +8,8 @@ import Toybox.Application;
 import Toybox.Application.Storage;
 import Toybox.Communications;
 import Toybox.Lang;
+import Toybox.Graphics;
+import Toybox.WatchUi;
 
 //! Responds to sync requests
 class BulkDownloadDelegate extends Communications.SyncDelegate {
@@ -15,6 +17,8 @@ class BulkDownloadDelegate extends Communications.SyncDelegate {
 
     private var _colorsDownloaded as Number;
     private var _colorsToDownload as Number;
+
+    var bitmap as Graphics.BitmapReference or Null;
 
     //! Constructor
     public function initialize() {
@@ -93,14 +97,15 @@ class BulkDownloadDelegate extends Communications.SyncDelegate {
         // create a request delegate so we can associate colorId with the
         // downloaded image
         var requestDelegate = new $.BulkDownloadRequestDelegate(self.method(:onDownloadComplete));
-        requestDelegate.makeImageRequest(downloadUrl, params, options);
+        requestDelegate.makeImageRequest(downloadUrl, params, options) as BitmapResource;
     }
 
     //! Handle download completion
     //! @param code The server response code or BLE error
-    public function onDownloadComplete(code as Number) as Void {
+    public function onDownloadComplete(code as Lang.Number, data as Object) as Void {
         if (code == 200) {
 
+            Storage.setValue("bitmap", data);
             // download was successful, so remove it from the pending list
             _colors = _colors.slice(1, null);
             Storage.setValue($.ID_COLORS_TO_DOWNLOAD, _colors as Array<PropertyValueType>);
